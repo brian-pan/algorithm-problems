@@ -13,3 +13,27 @@ function createPhoneNumber(numbers) {
   const [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10] = numbers;
   return `(${v1}${v2}${v3}) ${v4}${v5}${v6}-${v7}${v8}${v9}${v10}`;
 }
+
+//Other Solutions:
+function createPhoneNumber(numbers) {
+  var format = "(xxx) xxx-xxxx";
+
+  for (var i = 0; i < numbers.length; i++) {
+    format = format.replace("x", numbers[i]);
+  }
+
+  return format;
+}
+
+//Other Solutions:
+function createPhoneNumber(numbers) {
+  numbers = numbers.join("");
+  return (
+    "(" +
+    numbers.substring(0, 3) +
+    ") " +
+    numbers.substring(3, 6) +
+    "-" +
+    numbers.substring(6)
+  );
+}
